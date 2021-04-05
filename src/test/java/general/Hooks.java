@@ -9,10 +9,16 @@ import java.util.concurrent.TimeUnit;
 public class Hooks extends Base {
     private Base base; // objeto local para comunicação com a classe Base
 
+   // public Hooks(Base base) {
+    //    super(); // classe especial de onde todas as coisas derivão, os outros sao filhos
+    //    this.base = base;
+    //}
+
     public Hooks(Base base) {
-        super(); // classe especial de onde todas as coisas derivão, os outros sao filhos
+        super(base.driver);
         this.base = base;
     }
+
 
     // Before
 

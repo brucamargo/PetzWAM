@@ -11,7 +11,7 @@ public class Base {
     // criar um construtor e inicializar os elementos do pae factory
     public Base(WebDriver driver) {
         this.driver = driver;
-        PageFactory.initElements('driver',this);
+        PageFactory.initElements(driver,this);
     }
 
 
