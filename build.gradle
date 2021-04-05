@@ -1,0 +1,61 @@
+plugins {
+    id 'java'
+}
+
+group 'br.com.pets'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    // https://mvnrepository.com/artifact/info.cukes/cucumber-java
+    implementation group: 'info.cukes', name: 'cucumber-java', version: '1.2.5'
+// https://mvnrepository.com/artifact/info.cukes/cucumber-junit
+    testImplementation group: 'info.cukes', name: 'cucumber-junit', version: '1.2.5'
+// https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    testImplementation group: 'info.cukes', name: 'cucumber-picocontainer', version: '1.2.5'
+    // crtl + shift + O
+    // https://mvnrepository.com/artifact/com.vimalselvam/cucumber-extentsreport
+    implementation group: 'com.vimalselvam', name: 'cucumber-extentsreport', version: '3.1.1'
+    implementation group: 'com.aventstack', name: 'extentreports', version: '3.0.7'
+    implementation group: 'org.freemarker', name: 'freemarker', version: '2.3.28'
+
+    // 1 passo configurar o gradle > mvnrepositores
+    // 2 criar o package dentro de test/java
+    // 3 Criar a classe
+    // 4 criar a pasta driver + driver do selenium >> chromedriver.exe
+
+    // selenium + cucumber
+    // hooks ficam os befores e afetrs
+    // geerks ficam em features arquivo.feature listas com as intruções fica em src/teste/resources
+    // paracada features tem um steps arquivo.java step é o que vai executar conforme as intruções src/teste/java
+    // precisa ter o arquivo base com o selenium , na clase base fica o selenium
+    // arquivo base fala com todos
+
+    // precisa criar o pacote steps em java
+    // criar um packege features em resources e depois em features um arquivo
+    // cria a classe Hooks
+
+
+
+    //C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\secrets
+
+}
+test {
+
+    useJUnit() //roda todos os testes
+}
+
+task regressionTests(type: Test){
+
+    include '**/Runner*' //executa uma especifica
+}
+task smokeTests(type: Test){
+
+    include '**/Runner*'
+    // excluir um exclude '**/Runnerbackup'
+}
